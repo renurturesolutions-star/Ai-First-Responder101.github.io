@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fix-It AI</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Fix-It AI Assistant</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <label>Describe your issue:</label>
+      <textarea name="issue_text" rows="4" placeholder="Type your problem..."></textarea>
+
+      <label>or Upload an image:</label>
+      <input type="file" name="image" accept="image/*" />
+
+      <button type="submit">Fix It!</button>
+    </form>
+
+    {% if response %}
+      <div class="response">
+        <h2>AI Suggestion:</h2>
+        <p>{{ response }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
